@@ -98,6 +98,34 @@ const orderForm=document.getElementById('orderForm');
 const qtyInputs=[...document.querySelectorAll('.qty')];
 function updateOrder(){let count=0,total=0,lines=[];qtyInputs.forEach(input=>{const qty=Math.max(0,parseInt(input.value||0));const price=Number(input.dataset.price);const line=qty*price;input.closest('.order-item').querySelector('.item-price span').textContent=line;count+=qty;total+=line;if(qty)lines.push(`${input.dataset.name} x ${qty} = ৳${line}`)});document.getElementById('itemCount').textContent=count;document.getElementById('subtotal').textContent=total;document.getElementById('total').textContent=total;return {count,total,lines};}
 qtyInputs.forEach(i=>i.addEventListener('input',updateOrder));
-orderForm.addEventListener('submit',e=>{const o=updateOrder();if(!o.count){e.preventDefault();alert('Please choose at least one food item.');return}document.getElementById('orderDetails').value=o.lines.join(' | ');document.getElementById('orderTotal').value=`৳${o.total}`;});
+orderForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const o=updateOrder();
+  if(!o.count){alert('Please choose at least one food item.');return;}
+  document.getElementById('orderDetails').value=o.lines.join(' | ');
+  document.getElementById('orderTotal').value=`৳${o.total}`;
+  const submitButton=orderForm.querySelector('.order-submit');
+  const originalLabel=submitButton.textContent;
+  submitButton.disabled=true;
+  submitButton.textContent='Sending your order…';
+  try{
+    const response=await fetch(orderForm.action,{
+      method:'POST',
+      body:new FormData(orderForm),
+      headers:{'Accept':'application/json'}
+    });
+    if(!response.ok) throw new Error('Order submission failed');
+    document.getElementById('orderSuccess').style.display='block';
+    document.getElementById('orderSuccess').textContent='Order submitted successfully! Taking you home… 🎉';
+    orderForm.reset();
+    updateOrder();
+    window.location.hash='home';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }catch(error){
+    alert('Sorry, your order could not be sent. Please check your internet connection and try again.');
+    submitButton.disabled=false;
+    submitButton.textContent=originalLabel;
+  }
+});
 </script>
 </body></html>
