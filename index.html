@@ -115,10 +115,9 @@ orderForm.addEventListener('submit',async e=>{
       headers:{'Accept':'application/json'}
     });
     if(!response.ok) throw new Error('Order submission failed');
-    document.getElementById('orderSuccess').style.display='block';
-    document.getElementById('orderSuccess').textContent='Order submitted successfully! Taking you home… 🎉';
     orderForm.reset();
     updateOrder();
+    alert('🎉 Order submitted successfully! Thank you for ordering from Shawarma House.');
     window.location.hash='home';
     window.scrollTo({top:0,behavior:'smooth'});
   }catch(error){
