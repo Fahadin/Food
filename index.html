@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Fresh, homemade shawarma made with love. Explore our menu and order your favourite wrap.">
-<title>Shawarma House | Freshly Made, Lovingly Wrapped</title>
+<title>Mr and Mrs Shawarma House | Freshly Made, Lovingly Wrapped</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -48,8 +48,8 @@ header{animation:navDrop .65s cubic-bezier(.2,.8,.2,1) both}
 </head>
 <body>
 <header><div class="wrap nav">
-<a class="brand" href="#home"><span class="brand-mark">🌯</span><span>SHAWARMA HOUSE<small>FRESH • HOMEMADE • DELICIOUS</small></span></a>
-<nav class="links" id="navLinks"><a href="#home">Home</a><a href="#menu">Our Menu</a><a href="#story">Our Story</a><a href="#how">How It Works</a><a href="#contact">Contact</a></nav>
+<a class="brand" href="#home"><span class="brand-mark">🌯</span><span>Mr and Mrs SHAWARMA HOUSE<small>FRESH • HOMEMADE • DELICIOUS</small></span></a>
+<nav class="links" id="navLinks"><a href="#home">Home</a><a href="#menu">Our Menu</a><a href="#story">Our Story</a><a href="#how">How It Works</a><a href="#contact">Order Now</a></nav>
 <a class="btn" href="#menu">Explore Menu ↗</a><button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
 </div></header>
 <main>
@@ -71,12 +71,12 @@ header{animation:navDrop .65s cubic-bezier(.2,.8,.2,1) both}
 <section class="wrap"><div class="cta"><div><h2>Craving something delicious?</h2><p>Your next favourite shawarma is just one message away.</p></div><a class="btn" href="#contact">Let's talk shawarma&nbsp; →</a></div></section>
 <section class="section" id="contact"><div class="wrap"><div class="contact"><div><div class="eyebrow">Come say hello</div><h2>Order your shawarma.</h2><p>Choose your food, set the quantity and send your order. Your order details, customer information and total will be emailed to you.</p><div class="contact-card"><h3>Contact</h3><div class="contact-line"><b>☎</b><span>Phone / WhatsApp: <strong>+880 1XXXXXXXXX</strong></span></div><div class="contact-line"><b>📍</b><span>Your kitchen address or delivery area</span></div><div class="contact-line"><b>🕒</b><span>Daily: 12:00 PM – 10:00 PM</span></div></div></div><div class="order-wrap"><div class="cart-title">Place an order 🌯</div><form id="orderForm" action="https://formsubmit.co/kawsarkamal59@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Shawarma House Order"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" id="orderDetails" name="Order details"><input type="hidden" id="orderTotal" name="Order total"><div class="order-items"><div class="order-item"><div><h4>Classic Chicken</h4><small>৳180 each</small></div><input class="qty" type="number" min="0" max="50" value="0" data-name="Classic Chicken" data-price="180"><div class="item-price">৳<span>0</span></div></div><div class="order-item"><div><h4>Loaded Shawarma</h4><small>৳230 each</small></div><input class="qty" type="number" min="0" max="50" value="0" data-name="Loaded Shawarma" data-price="230"><div class="item-price">৳<span>0</span></div></div><div class="order-item"><div><h4>Garden Fresh Wrap</h4><small>৳150 each</small></div><input class="qty" type="number" min="0" max="50" value="0" data-name="Garden Fresh Wrap" data-price="150"><div class="item-price">৳<span>0</span></div></div></div><div class="order-summary"><div class="summary-row"><span>Items</span><strong id="itemCount">0</strong></div><div class="summary-row"><span>Subtotal</span><strong>৳<span id="subtotal">0</span></strong></div><div class="summary-total"><div class="summary-row"><span>Total</span><strong>৳<span id="total">0</span></strong></div></div></div><div class="form-grid" style="margin-top:18px"><div class="field"><label for="name">Your name *</label><input id="name" name="Customer name" required></div><div class="field"><label for="phone">Phone *</label><input id="phone" name="Phone" type="tel" required></div><div class="field full"><label for="address">Delivery address *</label><textarea id="address" name="Delivery address" required></textarea></div><div class="field full"><label for="notes">Special instructions</label><textarea id="notes" name="Special instructions" placeholder="Extra sauce, no onions, delivery note..." ></textarea></div></div><button class="btn order-submit" type="submit">Send my order →</button><p class="order-note">Orders will be sent to <strong>kawsarkamal59@gmail.com</strong>. FormSubmit may send a one-time confirmation email before the first order can be delivered.</p><div class="success-msg" id="orderSuccess">Your order is ready to send! 🎉</div></form></div></div></div></section>
 </main>
-<footer><div class="wrap footer-row"><strong>🌯 SHAWARMA HOUSE</strong><span>Freshly made. Lovingly wrapped. © 2026</span><span>Made with ♥ for shawarma lovers</span></div></footer>
+<footer><div class="wrap footer-row"><strong>🌯 Mr and Mrs SHAWARMA HOUSE</strong><span>Freshly made. Lovingly wrapped. © 2026</span><span>Made with ♥ for shawarma lovers</span></div></footer>
 <div class="order-success-overlay" id="orderSuccessPopup" role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-describedby="successDescription">
   <div class="success-popup">
     <div class="success-check" aria-hidden="true">✓</div>
     <h2 id="successTitle">Order submitted!</h2>
-    <p id="successDescription">Thank you for ordering from Shawarma House. Your order details have been sent successfully.</p>
+    <p id="successDescription">Thank you for ordering from Mr and Mrs Shawarma House. Your order details have been sent successfully.</p>
     <div class="success-countdown" aria-hidden="true"><span></span></div>
     <small>You’ll be taken back to the home page in 10 seconds.</small>
   </div>
